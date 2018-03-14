@@ -77,7 +77,9 @@ inline double * getError(double gt_x, double gt_y, double gt_theta, double pf_x,
 inline bool read_map_data(std::string filename, Map& map) {
 
 	// Get file of map:
-	std::ifstream in_file_map(filename.c_str(),std::ifstream::in);
+	std::cout << filename.c_str() << std::endl;
+	std::ifstream in_file_map(filename.c_str(), std::ifstream::in);
+
 	// Return if we can't open the file.
 	if (!in_file_map) {
 		return false;
