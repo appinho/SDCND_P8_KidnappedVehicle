@@ -76,7 +76,7 @@ public:
 	 * @param predicted Vector of predicted landmark observations
 	 * @param observations Vector of landmark observations
 	 */
-	void dataAssociation(std::vector<LandmarkObs> predicted, std::vector<LandmarkObs>& observations);
+	void dataAssociation(std::vector<LandmarkObs> predicted, const Map &map_landmarks);
 	
 	/**
 	 * updateWeights Updates the weights for each particle based on the likelihood of the 
@@ -118,6 +118,12 @@ public:
 	* Prints the particle state info
 	*/
 	void printParticles();
+
+	/*
+	* Get the single weight of one particle
+	*/
+	double getWeight(const float x_off, const float y_off, const float std_x, const float std_y);
+
 };
 
 
